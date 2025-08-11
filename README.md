@@ -1,6 +1,6 @@
 # Chatbot pour le Service Client
 
-Ce projet est un chatbot conçu pour le service client, développé avec Python et le framework Rasa. Il est destiné à être un exemple pour un portfolio, montrant comment construire un assistant conversationnel capable de gérer les demandes des clients.
+Ce projet est un chatbot conçu pour le service client, développé avec Python et le framework Rasa. 
 
 ## Technologies Utilisées
 
@@ -52,7 +52,7 @@ Le projet suit la structure standard d'un projet Rasa :
 
 Pour faire fonctionner ce projet sur votre machine locale, suivez ces étapes :
 
-1.  **Clonez le projet** (si c'est un dépôt git) ou assurez-vous d'être dans le répertoire du projet.
+1.  **Clonez le projet** git clone https://github.com/LEGBEDJE/Chatbot-pour-le-service-client.
 
 2.  **Créez et activez l'environnement virtuel** (si ce n'est pas déjà fait) :
     ```bash
