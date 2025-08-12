@@ -1,7 +1,6 @@
 version: "3.1"
 
 stories:
-
 - story: happy path
   steps:
   - intent: greet
@@ -28,3 +27,28 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: book table
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_table
+  - action: utter_ask_for_people
+  - intent: affirm
+  - action: utter_ask_for_time
+  - action: utter_booking_confirmation
+
+- story: ask for menu
+  steps:
+  - intent: ask_menu
+  - action: utter_menu
+
+- story: ask for opening hours
+  steps:
+  - intent: ask_opening_hours
+  - action: utter_opening_hours
+
+- story: ask for location
+  steps:
+  - intent: ask_location
+  - action: utter_location

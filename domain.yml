@@ -8,26 +8,66 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - book_table
+  - ask_menu
+  - ask_opening_hours
+  - ask_location
+
+entities:
+  - number_of_people:
+      type: number
+  - time:
+      type: text
+
+slots:
+  number_of_people:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: number_of_people
+  time:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: time
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Bonjour ! Bienvenue au restaurant 'Le Gemini'. Comment puis-je vous aider ?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "Voici une image pour vous remonter le moral :"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Est-ce que cela vous a aidé ?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Super ! Continuez comme ça."
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Au revoir !"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Je suis un bot, développé par Gemini."
+
+  utter_ask_for_people:
+  - text: "Pour combien de personnes souhaitez-vous réserver ?"
+
+  utter_ask_for_time:
+  - text: "À quelle heure souhaitez-vous réserver ?"
+
+  utter_booking_confirmation:
+  - text: "Parfait, j'ai réservé une table pour {number_of_people} personnes à {time}."
+
+  utter_menu:
+  - text: "Voici notre menu : [Lien vers le menu en ligne ou description du menu]."
+
+  utter_opening_hours:
+  - text: "Nous sommes ouverts de 12h à 15h et de 19h à 23h."
+
+  utter_location:
+  - text: "Nous sommes situés au 123 Rue de la Gastronomie, 75001 Paris."
 
 session_config:
   session_expiration_time: 60

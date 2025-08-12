@@ -3,89 +3,74 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
+    - bonjour
+    - salut
     - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - coucou
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
+    - au revoir
+    - à plus tard
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
+    - oui
+    - en effet
     - correct
+    - c'est ça
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - non
+    - jamais
+    - pas vraiment
+    - faux
 
 - intent: mood_great
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - parfait
+    - génial
+    - super
+    - je suis content
 
 - intent: mood_unhappy
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - triste
+    - pas bien
+    - je suis déçu
+    - horrible
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - es-tu un bot?
+    - es-tu humain?
+    - je parle à un bot?
+
+- intent: book_table
+  examples: |
+    - je voudrais réserver une table
+    - réserver une table pour [2](number_of_people) personnes
+    - une table pour [trois](number_of_people)
+    - je veux une table pour [4](number_of_people) à [20h](time)
+    - réserver pour [5](number_of_people) personnes à [19h30](time)
+
+- intent: ask_menu
+  examples: |
+    - quel est le menu?
+    - montrez-moi le menu
+    - je peux voir la carte?
+    - que proposez-vous?
+
+- intent: ask_opening_hours
+  examples: |
+    - quelles sont vos horaires?
+    - vous êtes ouverts quand?
+    - horaires d'ouverture
+
+- intent: ask_location
+  examples: |
+    - où êtes-vous situés?
+    - quelle est votre adresse?
+    - comment venir?
