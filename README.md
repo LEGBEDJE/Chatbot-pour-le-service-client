@@ -1,6 +1,6 @@
 # Chatbot pour le Service Client
 
-Ce projet est un chatbot conçu pour le service client, développé avec Python et le framework Rasa. 
+Ce projet est un chatbot conçu pour le service client d'un restaurant, développé avec Python et le framework Rasa. Il est destiné à être un exemple pour un portfolio, montrant comment construire un assistant conversationnel capable de gérer les demandes des clients.
 
 ## Technologies Utilisées
 
@@ -10,6 +10,40 @@ Ce projet est un chatbot conçu pour le service client, développé avec Python 
     *   **Rasa Core**: Pour la gestion du dialogue.
 *   **NLTK**: (Natural Language Toolkit) Utilisé par Rasa pour le traitement du langage naturel.
 *   **TensorFlow**: Utilisé par Rasa comme backend pour l'apprentissage automatique.
+
+## Fonctionnalités
+
+Ce chatbot de restaurant peut gérer les interactions suivantes :
+
+*   **Salutations** : Accueillir l'utilisateur de manière amicale.
+*   **Réservation de table** : Guider l'utilisateur dans le processus de réservation d'une table en demandant le nombre de personnes et l'heure.
+*   **Consultation du menu** : Fournir des informations sur le menu du restaurant.
+*   **Horaires d'ouverture** : Indiquer les heures d'ouverture et de fermeture du restaurant.
+*   **Localisation** : Donner l'adresse du restaurant.
+*   **Gestion de l'humeur** : Répondre de manière appropriée si l'utilisateur est content ou mécontent.
+*   **Identification** : Se présenter comme un bot si l'utilisateur le demande.
+
+## Exemples de Conversation
+
+**Réserver une table :**
+
+```
+Utilisateur: Bonjour
+Bot: Bonjour ! Bienvenue au restaurant 'Le Gemini'. Comment puis-je vous aider ?
+Utilisateur: Je voudrais réserver une table pour 2 personnes à 20h
+Bot: Pour combien de personnes souhaitez-vous réserver ?
+Utilisateur: 2
+Bot: À quelle heure souhaitez-vous réserver ?
+Utilisateur: 20h
+Bot: Parfait, j'ai réservé une table pour 2 personnes à 20h.
+```
+
+**Consulter le menu :**
+
+```
+Utilisateur: Quel est le menu ?
+Bot: Voici notre menu : [Lien vers le menu en ligne ou description du menu].
+```
 
 ## Architecture du Projet
 
@@ -35,26 +69,24 @@ Le projet suit la structure standard d'un projet Rasa :
 └── endpoints.yml
 ```
 
-*   **`actions/`**: Contient le code pour les actions personnalisées en Python. Ces actions peuvent être utilisées pour exécuter du code, comme appeler une API externe ou se connecter à une base de données.
+*   **`actions/`**: Contient le code pour les actions personnalisées en Python.
 *   **`data/`**: Contient toutes les données d'entraînement pour le chatbot.
-    *   **`nlu.yml`**: Définit les intentions (ce que l'utilisateur veut faire) and les entités (les informations à extraire du message de l'utilisateur).
-    *   **`rules.yml`**: Contient des règles pour les conversations qui doivent suivre un chemin prédéfini.
-    *   **`stories.yml`**: Contient des exemples de conversations (histoires) pour entraîner le modèle de dialogue du chatbot.
 *   **`models/`**: C'est ici que Rasa sauvegarde les modèles entraînés.
 *   **`tests/`**: Contient les tests pour votre chatbot.
-*   **`venv/`**: Le répertoire de l'environnement virtuel Python, contenant les dépendances du projet.
-*   **`config.yml`**: Le fichier de configuration principal. Il définit le pipeline NLU et les politiques de dialogue.
-*   **`credentials.yml`**: Contient les informations d'identification pour connecter le chatbot à des canaux de messagerie externes (ex: Facebook Messenger, Slack).
-*   **`domain.yml`**: Le "cerveau" du chatbot. Il définit toutes les intentions, entités, réponses, et actions que le chatbot connaît.
-*   **`endpoints.yml`**: Utilisé pour configurer les points de terminaison (endpoints) pour les actions personnalisées et d'autres services.
+*   **`venv/`**: Le répertoire de l'environnement virtuel Python.
+*   **`config.yml`**: Le fichier de configuration principal.
+*   **`credentials.yml`**: Contient les informations d'identification pour les canaux externes.
+*   **`domain.yml`**: Le "cerveau" du chatbot.
+*   **`endpoints.yml`**: Configure les points de terminaison pour les actions personnalisées.
 
 ## Démarrage Rapide
 
-Pour faire fonctionner ce projet sur votre machine locale, suivez ces étapes :
+1.  **Clonez le projet** :
+    ```bash
+    git clone git@github.com:LEGBEDJE/Chatbot-pour-le-service-client.git
+    ```
 
-1.  **Clonez le projet** git clone https://github.com/LEGBEDJE/Chatbot-pour-le-service-client.
-
-2.  **Créez et activez l'environnement virtuel** (si ce n'est pas déjà fait) :
+2.  **Créez et activez l'environnement virtuel** :
     ```bash
     python3 -m venv venv
     source venv/bin/activate
@@ -64,7 +96,6 @@ Pour faire fonctionner ce projet sur votre machine locale, suivez ces étapes :
     ```bash
     pip install -r requirements.txt
     ```
-    *(Note: Un fichier `requirements.txt` sera créé pour vous)*
 
 4.  **Entraînez le modèle Rasa** :
     ```bash
@@ -76,6 +107,10 @@ Pour faire fonctionner ce projet sur votre machine locale, suivez ces étapes :
     ./venv/bin/rasa shell
     ```
 
-## Comment Utiliser
+## Pistes d'Amélioration
 
-Une fois le chatbot lancé avec `rasa shell`, vous pouvez commencer à interagir avec lui directement dans votre terminal. Le chatbot initial est un simple assistant, mais vous pouvez l'étendre pour gérer des scénarios de service client plus complexes.
+*   **Actions Personnalisées** : Implémenter des actions en Python (`actions.py`) pour interagir avec une véritable base de données de réservation.
+*   **Extraction d'Entités Améliorée** : Utiliser des techniques plus avancées pour extraire des informations plus complexes comme des dates.
+*   **Intégration de Canaux** : Connecter le chatbot à des plateformes comme Facebook Messenger ou WhatsApp.
+*   **Tests et Validation** : Écrire des tests plus complets.
+*   **Déploiement** : Déployer le chatbot sur un serveur.
